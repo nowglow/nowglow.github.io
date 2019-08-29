@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="一些有关应用层协议的面试题总结">
+  
+  <meta property="og:title" content="计算机网络应用层面试题" />
+<meta property="og:description" content="一些有关应用层协议的面试题总结" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/" />
+<meta property="article:published_time" content="2019-06-25T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-25T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       计算机网络应用层面试题 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/java%E5%9F%BA%E7%A1%80"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Java基础 </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/java"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Java</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">计算机网络应用层面试题</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jun 25, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>5 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h2 id="dns-的概念-用途-dns-查询的实现算法">DNS 的概念，用途，DNS 查询的实现算法</h2>
+
+<blockquote>
+<p>概念：</p>
+</blockquote>
+
+<p>域名解析，将www.xxx.com 转换成 ip地址，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的 ip 地址</p>
+
+<p>DNS 协议运行在 UDP 协议之上，使用端口号 53</p>
+
+<p>一个由分层的dns服务器实现的分布式数据库</p>
+
+<blockquote>
+<p>主机解析域名的顺序</p>
+</blockquote>
+
+<p>浏览器缓存</p>
+
+<p>找本机的 hosts</p>
+
+<p>文件路由缓存</p>
+
+<p>找 DNS 服务器(本地域名、顶级域名、根域名) 迭代查询、递归查询</p>
+
+<h2 id="http-基本格式">http 基本格式</h2>
+
+<p>Http hyper test transfer protocol 超文本传输协议HTTP协议 ，该协议应用在浏览器与服务器之间。</p>
+
+<p>HTTP协议是应用层协议，规定了浏览器与服务端之间传输数据的方式，以及数据内容定义
+等规则。而HTTP协议要求必须建立在可靠的传输协议基础上，通常我们使用的传输协议为TCP协议。
+URL:统一资源定位
+我们在浏览器上输入的&rdquo;网址&rdquo;就是一个URL。
+URI有两种形式URL和URN</p>
+
+<p>1,请求行:
+请求行是一行字符串，以CRLF结尾
+注:
+CR，LF是asc编码中的回车符与换行符。
+CR:对应编码值为13
+LF:对应编码值为10</p>
+
+<p>请求行由三部分组成,格式为:
+method url protocol(CRLF)
+请求方式 URL中的抽象路径 使用的协议</p>
+
+<p>如:
+GET /index.html HTTP/1.1(CRLF)</p>
+
+<p>请求方式常见的:
+GET:地址栏方式请求，通常用户传递的参数会被包含在抽象路径中
+POST:打包传输，用户传递的数据会包含在消息正文中。</p>
+
+<p>2,消息头:</p>
+
+<p>消息头是由若干行组成，每一行为一个具体的消息头信息。
+消息头是客户端发送给服务端的附加信息，用于说明很多信息，
+比如告知服务端客户端使用的浏览器信息，请求的路径，交互
+方式，消息正文内容及长度等等。
+每一行字符串(一个消息头内容)都以CRLF结尾。最后一个消息头
+结束后会单独发送一个CRLF表示消息头部分结束。</p>
+
+<p>各式如:
+name: value(CRLF)
+消息头名字: 对应的值(CRLF)</p>
+
+<p>例如:
+Host: localhost:8088(CRLF)</p>
+
+<p>Connection: keep-alive(CRLF)</p>
+
+<p>Upgrade-Insecure-Requests: 1(CRLF)</p>
+
+<p>User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64)
+AppleWebKit/537.36 (KHTML, like Gecko)Chrome/69.0.3497.100 Safari/537.36(CRLF)</p>
+
+<p>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,<em>/</em>;q=0.8(CRLF)</p>
+
+<p>Accept-Encoding: gzip, deflate, br(CRLF)</p>
+
+<p>Accept-Language: zh-CN,zh;q=0.9(CRLF)(CRLF)</p>
+
+<p>3,消息正文</p>
+
+<p>消息正文是2进制数据(不一定是文本数据)，是用户传递给服务端
+的内容。
+一个请求中可以不包含消息正文。
+是否含有消息正文可以根据消息头中是否存在:
+Content-Type,Content-Length这两个头来判定。若消息头不
+含有这两个头信息，则该请求不含有消息正文。
+注:
+Content-Type用来说明消息正文的数据类型
+Content-Length用来说明消息正文总共多少字节</p>
+
+<p>一个完整的请求大致如下:</p>
+
+<p>GET /index.html HTTP/1.1(CRLF)</p>
+
+<p>Host: localhost:8088(CRLF)</p>
+
+<p>Connection: keep-alive(CRLF)</p>
+
+<p>Upgrade-Insecure-Requests: 1(CRLF)</p>
+
+<p>User-Agent: M ozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36(CRLF)</p>
+
+<p>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,<em>/</em>;q=0.8(CRLF)</p>
+
+<p>Accept-Encoding: gzip, deflate, br(CRLF)</p>
+
+<p>Accept-Language: zh-CN,zh;q=0.9(CRLF)(CRLF)</p>
+
+<p>响应</p>
+
+<p>响应是服务端发送给客户端的内容</p>
+
+<p>一个响应包含三部分内容:
+状态行，响应头，响应正文</p>
+
+<p>1，状态行</p>
+
+<p>状态行由一行字符串构成(CRLF结尾)</p>
+
+<p>格式：</p>
+
+<p>protocol statusCode statusReason(CRLF)</p>
+
+<p>协议版本 状态代码 状态描述(CRLF)</p>
+
+<p>状态代码是一个3位数字，客户端通过这个代码判断自己的请求
+是否被服务器处理，以及处理结果如何。</p>
+
+<p>状态代码分为5类:</p>
+
+<p>1xx:保留</p>
+
+<p>2xx:成功，表示服务端成功处理了该请求</p>
+
+<p>3xx:重定向,服务端希望客户端继续后续操作</p>
+
+<p>4xx:客户端错误,客户端的请求有误</p>
+
+<p>5xx:服务端错误,服务端处理请求时出现了错误</p>
+
+<p>代码      描述</p>
+
+<p>200    OK</p>
+
+<p>201    Created</p>
+
+<p>202    Accepted</p>
+
+<p>204    No Content</p>
+
+<p>301    Moved Permanently</p>
+
+<p>302    Moved Temporarily</p>
+
+<p>304    Not Modified</p>
+
+<p>400    Bad Request</p>
+
+<p>401    Unauthorized</p>
+
+<p>403    Forbidden</p>
+
+<p>404    Not Found</p>
+
+<p>500    Internal Server Error</p>
+
+<p>501    Not Implemented</p>
+
+<p>502    Bad Gateway</p>
+
+<p>503    Service Unavailable</p>
+
+<p>例如:
+HTTP/1.1 200 OK(CRLF)</p>
+
+<p>2,响应头
+响应头的格式与请求中的消息头一样。是服务端发送给客户端的
+附加信息。</p>
+
+<p>3,响应正文
+响应正文是2进制数据，是服务端实际响应给客户端请求的结果
+一个响应中也可以不包含响应正文，客户端也是通过响应头中
+是否包含:Content-Type与Content-Length来读取的。</p>
+
+<p>一个响应内容大致如下:
+HTTP/1.1 200 OK(CRLF)
+Content-Type: text/html(CRLF)
+Content-Length: 125(CRLF)(CRLF)
+1101010100101010100101011&hellip;&hellip;</p>
+
+<p>http 请求：
+<img src="https://nowglow.github.io/img/blog/request.png"  alt="请求" /></p>
+
+<p>http 响应：
+<img src="https://nowglow.github.io/img/blog/response.png"  alt="响应" /></p>
+
+<h2 id="get-post-区别">GET、POST 区别</h2>
+
+<p>1）Get将表单中数据按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&amp;”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL；</p>
+
+<p>2）Get是不安全的，因为在传输过程，数据被放在请求的URL中；Post的所有操作对用户来说都是不可见的；</p>
+
+<p>3）Get传输的数据量小，这主要是因为受URL长度限制；而Post可以传输大量的数据，所以在上传文件只能使用Post；</p>
+
+<p>4）Get限制Form表单的数据集必须为ASCII字符，而Post支持整个ISO10646字符集；</p>
+
+<p>5）Get是Form的默认方法。</p>
+
+<h2 id="cookies-和-session-的区别">Cookies 和 Session 的区别</h2>
+
+<p>cookie 数据保存在客户端，session 数据保存在服务器端</p>
+
+<p>cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗考虑到安全应当使用session。</p>
+
+<p>c、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE。</p>
+
+<p>d、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
+
+<p>session 其实指的就是访问者从到达某个特定主页到离开为止的那段时间。 Session 其实是利用 Cookie 进行信息处理的，当用户首先进行了请求后，服务端就在用户浏览器上创建了一个 Cookie，当这个 Session 结束时，其实就是意味着这个 Cookie 就过期了</p>
+
+<h2 id="一次完整的-http-请求所经历的步骤">一次完整的 HTTP 请求所经历的步骤</h2>
+
+<p>比如：在浏览器中输入 www.baidu.com 后执行的全部过程
+`
+<img src="https://nowglow.github.io/img/blog/baidu.png"  alt="百度" /></p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/java" role="button">Java </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-06/java%E4%B8%AD%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%85%88%E5%BA%8F%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Java中实现二叉树的先序、中序、后序、层序遍历</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>spring学习第一天</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#dns-%e7%9a%84%e6%a6%82%e5%bf%b5-%e7%94%a8%e9%80%94-dns-%e6%9f%a5%e8%af%a2%e7%9a%84%e5%ae%9e%e7%8e%b0%e7%ae%97%e6%b3%95">
+												 DNS 的概念，用途，DNS 查询的实现算法
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#http-%e5%9f%ba%e6%9c%ac%e6%a0%bc%e5%bc%8f">
+												 http 基本格式
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#get-post-%e5%8c%ba%e5%88%ab">
+												 GET、POST 区别
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#cookies-%e5%92%8c-session-%e7%9a%84%e5%8c%ba%e5%88%ab">
+												 Cookies 和 Session 的区别
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e4%b8%80%e6%ac%a1%e5%ae%8c%e6%95%b4%e7%9a%84-http-%e8%af%b7%e6%b1%82%e6%89%80%e7%bb%8f%e5%8e%86%e7%9a%84%e6%ad%a5%e9%aa%a4">
+												 一次完整的 HTTP 请求所经历的步骤
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

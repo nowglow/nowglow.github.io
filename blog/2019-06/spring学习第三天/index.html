@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="spring学习第三天">
+  
+  <meta property="og:title" content="spring学习第三天" />
+<meta property="og:description" content="spring学习第三天" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E5%A4%A9/" />
+<meta property="article:published_time" content="2019-06-28T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-28T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       spring学习第三天 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%89%E5%A4%A9/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/spring"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Spring </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/spring"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Spring</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">spring学习第三天</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jun 28, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>4 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h2 id="bean的属性注入-基于注解方式">Bean的属性注入–基于注解方式</h2>
+
+<blockquote>
+<p>IoC容器装配Bean , 基于注解配置方式</p>
+</blockquote>
+
+<ul>
+<li><p>Spring2.5 引入注解去定义Bean</p>
+
+<ul>
+<li>@Component 描述Spring框架中Bean</li>
+</ul></li>
+
+<li><p>Xml：头文件中加入context路径：</p>
+
+<ul>
+<li>xmlns:context=<a href="http://www.springframework.org/schema/context">http://www.springframework.org/schema/context</a></li>
+</ul></li>
+
+<li><p>最好直接从dsd-config.html中复制过来相应的代码段</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+       xsi:schemaLocation=&quot;
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+
+&lt;!-- bean definitions here --&gt;
+
+&lt;/beans&gt;
+</code></pre></li>
+
+<li><p>配置提示操作</p></li>
+
+<li><p>将红框中地址复制到Key中</p></li>
+
+<li><p>引入component-scan标签：<context:component-scan base-package="cn.itcast.spring3"/>，告诉Spring要去扫描哪些包下的类。</p></li>
+
+<li><p>Spring的框架中提供了与@Component注解等效的三个注解:</p>
+
+<ul>
+<li>@Repository 用于对DAO实现类进行标注</li>
+<li>@Service 用于对Service实现类进行标注</li>
+<li>@Controller 用于对Controller实现类进行标注</li>
+</ul></li>
+
+<li><p>三个注解是为了让标注类本身的用途清晰，Spring在后续版本会对其增强</p></li>
+
+<li></li>
+</ul>
+
+<h2 id="自动装配-bean">自动装配 Bean</h2>
+
+<ul>
+<li>使用@Autowired 进行自动注入</li>
+<li>@Service 标注业务类</li>
+<li>@Repository 标注DAO</li>
+
+<li><p>@Autowired 默认按照类型进行注入</p>
+
+<ul>
+<li>如果存在两个相同Bean类型，则按照名称注入</li>
+<li>@Autowired 注入时可以针对成员变量或者setter方法</li>
+</ul></li>
+
+<li><p>通过@Autowired的required属性，设置一定要找到匹配的Bean,默认为true，为false时表示对异常不关心。</p></li>
+
+<li><p>使用@Qualifier指定注入Bean的名称</p></li>
+
+<li><p>使用Qualifier 指定Bean名称后，注解Bean必须指定相同名称</p></li>
+</ul>
+
+<h2 id="普通属性">普通属性</h2>
+
+<ul>
+<li>@Value(value=”itcast”)</li>
+
+<li><p>private String info;</p>
+
+<h2 id="对象属性">对象属性</h2></li>
+
+<li><p>按类型注入</p>
+
+<ul>
+<li>@Autowired:自动装配默认使用类型注入.</li>
+</ul></li>
+
+<li><p>按名称进行注入</p>
+
+<ul>
+<li>@Autowired 中有一个属性required，默认为true，为false时表示对异常不关心。</li>
+<li>@Qualifier(“userDao”) 按名称进行注入.</li>
+</ul></li>
+</ul>
+
+<h2 id="标准注解-resource">标准注解@Resource</h2>
+
+<ul>
+<li><p>Spring提供对JSR-250中定义@Resource标准注解的支持@Resource和@Autowired注解功能相似</p></li>
+
+<li><p>下面两个例子等价</p>
+
+<pre><code>@Autowired
+@Qualifier(&quot;userDao&quot;)
+private UserDao userDao;
+
+@Resource(name=&quot;userDao&quot;)
+private UserDao userDao;
+</code></pre></li>
+</ul>
+
+<h2 id="bean其他的属性的配置">Bean其他的属性的配置</h2>
+
+<ul>
+<li>配置Bean初始化方法和销毁方法:
+
+<ul>
+<li>init-method 和 destroy-method.</li>
+<li>@PostConstruct ： 初始化</li>
+<li>@PreDestroy ： 销毁</li>
+</ul></li>
+</ul>
+
+<h2 id="配置bean的作用范围">配置Bean的作用范围</h2>
+
+<ul>
+<li>使用注解配置的Bean和<bean>配置的一样，默认作用范围都是singleton
+
+<ul>
+<li>@Scope注解用于指定Bean的作用范围</li>
+</ul></li>
+</ul>
+
+<h2 id="spring3-0可以-使用java类提供bean定义信息">Spring3.0可以 使用Java类提供Bean定义信息</h2>
+
+<ul>
+<li>Spring3.0以JavaConfig为核心，提供使用Java类定义Bean信息的方法
+
+<ul>
+<li>@Configuration 指定POJO类为Spring提供Bean定义信息,代表此类就是一个配置类。</li>
+<li>@Bean 提供一个Bean定义信息</li>
+</ul></li>
+
+<li><p>之前已经通过 component-scan标签 对配置类进行了扫描，故这里不需要再进行手动配置扫描了。</p>
+
+<p>@Configuration
+public class BeanConfig {</p>
+
+<pre><code>@Bean(name=&quot;car&quot;)
+public Car showCar(){
+    Car car = new Car();
+    car.setName(&quot;长安&quot;);
+    car.setPrice(40000d);
+    return car;
+}
+
+@Bean(name=&quot;product&quot;)
+public Product initProduct(){
+    Product product = new Product();
+    product.setName(&quot;空调&quot;);
+    product.setPrice(3000d);
+    return product;
+}
+</code></pre>
+
+<p>}</p></li>
+</ul>
+
+<p>实际开发中使用XML还是注解 ##
+- XML:
+ - bean管理
+- 注解:
+ - 注入属性的时候比较方便
+- 两种方式结合;一般使用XML注册Bean,使用注解进行属性的注入</p>
+
+<h2 id="spring整合web开发">Spring整合web开发</h2>
+
+<ul>
+<li>正常整合Servlet和Spring没有问题的,但是每次执行Servlet的时候加载Spring配置以及加载Spring环境</li>
+
+<li><p>解决办法:</p>
+
+<ul>
+<li>将加载的信息内容放到ServletContext中.ServletContext对象是全局的对象。服务器启动的时候创建的，在创建ServletContext的时候就加载Spring的环境。</li>
+<li>ServletContextListener:用于监听ServletContext对象的创建和销毁的.</li>
+
+<li><p>以上解决方法可以通过导入Spring web开发jar包来解决 ： spring-web-3.2.0.RELEASE.jar</p>
+
+<h2 id="web-xml中的配置">web.xml中的配置</h2></li>
+</ul></li>
+
+<li><p>将Spring容器初始化，交由web容器负责</p></li>
+
+<li><p>配置核心监听器 ContextLoaderListener</p></li>
+
+<li><p>配置全局参数contextConfigLocation</p>
+
+<ul>
+<li><p>用于指定Spring的框架的配置文件位置（因为：applicationContext.xml文件与默认位置不一致）</p>
+
+<pre><code>&lt;listener&gt;
+     &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+
+&lt;/listener&gt;
+ &lt;context-param&gt;
+     &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+     &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+ &lt;/context-param&gt;
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h2 id="获得webapplicationcontext对象">获得WebApplicationContext对象</h2>
+
+<ul>
+<li><p>因为Spring容器已经交由web容器初始化和管理,获得WebApplicationContext对象，需要依赖ServletContext对象 通常在Servlet中完成:</p>
+
+<p>WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());</p></li>
+
+<li><p>另一种方式</p>
+
+<p>WebApplicationContext applicationContext = (WebApplicationContext) getServletContext().getAttribute(WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE);</p></li>
+
+<li><p>eg:</p></li>
+
+<li><p>web.xml</p>
+
+<pre><code>&lt;web-app xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:web=&quot;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot; version=&quot;2.5&quot;&gt;
+  &lt;display-name&gt;&lt;/display-name&gt;
+ &lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+ &lt;/listener&gt;
+
+ &lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+ &lt;/context-param&gt;
+
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;UserServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;cn.itcast.servlet.UserServlet&lt;/servlet-class&gt;
+  &lt;/servlet&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;UserServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/userServlet&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+  &lt;welcome-file-list&gt;
+    &lt;welcome-file&gt;index.jsp&lt;/welcome-file&gt;
+  &lt;/welcome-file-list&gt;
+&lt;/web-app&gt;
+</code></pre></li>
+</ul>
+
+<p>UserServlet &amp; UserService
+        public class UserServlet extends HttpServlet {</p>
+
+<pre><code>        public void doGet(HttpServletRequest request, HttpServletResponse response)
+                throws ServletException, IOException {
+            /*ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                    &quot;applicationContext.xml&quot;);*/
+            WebApplicationContext applicationContext = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
+
+            UserService userService = (UserService) applicationContext
+                    .getBean(&quot;userService&quot;);
+            userService.sayHello();
+        }
+
+
+
+    public class UserService {
+
+        public void sayHello(){
+            System.out.println(&quot;Hello Spring web...&quot;);
+        }
+    }
+</code></pre>
+
+<p>Spring集成JUnit测试
+- 1.程序中有Junit环境.
+- 2.导入Spring test测试jar包
+ - spring-test-3.2.0.RELEASE.jar
+- 3.测试代码:</p>
+
+<pre><code>    @RunWith(SpringJUnit4ClassRunner.class)
+    @ContextConfiguration(locations=&quot;classpath:applicationContext.xml&quot;)
+        public class SpringTest {
+            @Autowired
+            private UserService userService;
+
+            @Test
+            public void demo 1(){
+                userService.sayHello();
+            }
+    }
+</code></pre>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/spring" role="button">Spring </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>spring学习第二天</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E5%9B%9B%E5%A4%A9/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>spring学习第四天</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e7%9a%84%e5%b1%9e%e6%80%a7%e6%b3%a8%e5%85%a5-%e5%9f%ba%e4%ba%8e%e6%b3%a8%e8%a7%a3%e6%96%b9%e5%bc%8f">
+												 Bean的属性注入–基于注解方式
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e8%87%aa%e5%8a%a8%e8%a3%85%e9%85%8d-bean">
+												 自动装配 Bean
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e6%99%ae%e9%80%9a%e5%b1%9e%e6%80%a7">
+												 普通属性
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%af%b9%e8%b1%a1%e5%b1%9e%e6%80%a7">
+												 对象属性
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e6%a0%87%e5%87%86%e6%b3%a8%e8%a7%a3-resource">
+												 标准注解@Resource
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e5%85%b6%e4%bb%96%e7%9a%84%e5%b1%9e%e6%80%a7%e7%9a%84%e9%85%8d%e7%bd%ae">
+												 Bean其他的属性的配置
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e9%85%8d%e7%bd%aebean%e7%9a%84%e4%bd%9c%e7%94%a8%e8%8c%83%e5%9b%b4">
+												 配置Bean的作用范围
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring3-0%e5%8f%af%e4%bb%a5-%e4%bd%bf%e7%94%a8java%e7%b1%bb%e6%8f%90%e4%be%9bbean%e5%ae%9a%e4%b9%89%e4%bf%a1%e6%81%af">
+												 Spring3.0可以 使用Java类提供Bean定义信息
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e6%95%b4%e5%90%88web%e5%bc%80%e5%8f%91">
+												 Spring整合web开发
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#web-xml%e4%b8%ad%e7%9a%84%e9%85%8d%e7%bd%ae">
+												 web.xml中的配置
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e8%8e%b7%e5%be%97webapplicationcontext%e5%af%b9%e8%b1%a1">
+												 获得WebApplicationContext对象
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

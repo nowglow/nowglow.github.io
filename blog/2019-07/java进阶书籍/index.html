@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="这些进阶书籍你都看过吗？">
+  
+  <meta property="og:title" content="Java进阶书籍" />
+<meta property="og:description" content="这些进阶书籍你都看过吗？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-07/java%E8%BF%9B%E9%98%B6%E4%B9%A6%E7%B1%8D/" />
+<meta property="article:published_time" content="2019-07-01T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-01T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       Java进阶书籍 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-07/java%E8%BF%9B%E9%98%B6%E4%B9%A6%E7%B1%8D/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/java"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Java </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/java"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Java</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Java进阶书籍</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jul 1, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>10 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<p>转载地址:<a href="http://www.kuqin.com/shuoit/20160107/349896.html">http://www.kuqin.com/shuoit/20160107/349896.html</a></p>
+
+<h2 id="1-深入理解java虚拟机-jvm高级特性与最佳实践">1、深入理解Java虚拟机：JVM高级特性与最佳实践</h2>
+
+<p>如果你不满足于做一个只会写if…else…的Java程序员，而是希望更进一步，我随便举几个例子吧：</p>
+
+<ul>
+<li>了解Java代码的底层运行机制</li>
+<li>定位性能问题</li>
+<li>对整个系统进行性能调优</li>
+<li>解决各种奇奇怪怪的线上线下问题</li>
+<li>更加高级别的，为自己的项目量身定做一款适合自己项目的虚拟机</li>
+</ul>
+
+<p>那么Java虚拟机是你必学的一门技术。《深入理解Java虚拟机：JVM高级特性与最佳实践》作者是周志明，这本书可以说是国内写得最好的有关Java虚拟机的书籍，近半年，前前后后这本书我起码看了有5遍。国内写虚拟机的书除了这本，其实还有一些其他的，我也买过，不过粗略看下来，很多内容也是《深入理解Java虚拟机：JVM高级特性与最佳实践》此书里面的。</p>
+
+<p>另外值得一提的是，《深入理解Java虚拟机：JVM高级特性与最佳实践》这本书，有电子版的，网上搜一下就能下载到了。不过建议有兴趣的朋友还是去买书看，电子版本下载到的一般是比较老的版本，相比最新修订版的《深入理解Java虚拟机：JVM高级特性与最佳实践》，有很多作者新补充的知识点是没有的。</p>
+
+<h2 id="2-hotspot实战">2、HotSpot实战</h2>
+
+<p>所有的Java虚拟机都是遵循着Java虚拟机规范来的，市面上的Java虚拟机几十款，《深入理解Java虚拟机：JVM高级特性与最佳实践》一书里面讲的虚拟机并不针对某种特定的虚拟机，而是从Java虚拟机规范的角度来讲解Java虚拟机。</p>
+
+<p>我们平时使用的乃至商用的大多数Java虚拟机都是Sun公司的HotSpot，大家cmd进入命令行，使用”java -version”命令就可以看到了。如果希望在Java虚拟机规范的基础上更加深入地去理解虚拟机的一些细节是怎么实现的，就可以看一下《HotSpot实战》一书，作者是陈涛。不过由于HotSpot的源码都是C/C++写的，所以要求读者有非常好的C/C++基础，如果对这两门语言不是很熟悉的朋友，看这本书可能对你帮助不是很大。</p>
+
+<p>最后提一句，如果有兴趣的朋友，不妨先去网上下载一个openJDK，HotSpot的源码就在里面。</p>
+
+<h2 id="3-java并发编程实战">3、Java并发编程实战</h2>
+
+<p>这本书常常被列入Java程序员必读十大书籍排行榜前几位，不过个人不是很推荐这本书。</p>
+
+<p>《Java并发编程实战》作者是Brian Goetz，怎么说呢，这本书前前后后我也看了两遍左右，个人感受是：</p>
+
+<ul>
+<li>文字多代码少</li>
+<li>讲解多实践少</li>
+</ul>
+
+<p>我觉得这可能就是老外写书的特点吧，因为Java是北美国家（加拿大、美国）开发和维护的，所以老外对Java方方面面的理论知识体系都掌握得是非常清楚和透彻的。翻开这本书看，多线程什么用、什么是死锁、什么是竞争、什么是线程安全等等，方方面面的知识点都用大量的文字篇幅讲解，不免让人感觉十分枯燥，也难让读者有实质性的进步。我这本书看了两遍也属于一目十行意思，有兴趣的地方就重点看一下。</p>
+
+<p>无论如何，作为一本常常位于Jva程序员必读十大书籍排行榜前几名的书，还是一定要推荐给大家的。</p>
+
+<h2 id="4-java多线程编程核心技术">4、java多线程编程核心技术</h2>
+
+<p>《Java多线程编程核心技术》作者高洪岩。想要学习多线程的朋友，这本书是我大力推荐的，我的个人博客里面二十多篇的多线程博文都是基于此书，并且在这本书的基础上进行提炼和总结而写出来的。</p>
+
+<p>此书和《Java并发编程实战》相反，这本书的特点是大篇幅的代码+小篇幅的精讲解，可能这和中国人写的书比较偏向实用主义的风格有关。本书关于线程安全、synchronized、Reentrant、Timer等等都用详细的代码进行了讲解，而且每个大知识点下的多个小知识点都会详细讲解到，非常有实践价值。</p>
+
+<p>有兴趣的朋友们，我相信只要你们跟着这本书里面的代码敲、运行、思考，三步走，对于多线程的使用与理解一定会进几大步。</p>
+
+<p>不过这本书的缺点就是对于Java并发包下的一些类像CountDownLatch、Semphore、CyclicBarrier、Future、Callable等都没有讲到，重点的CAS和AQS也没有触及，重点类的实现原理也没有提。当然，这很深入了，在学习了这本书之后如果能再去对这些知识进行一些学习、研究的话，你一定会慢慢成长为一个很厉害的多线程高手。</p>
+
+<h2 id="5-effective-java中文版">5、Effective Java中文版</h2>
+
+<p>这是唯一一本我没有买的书。初识这本书，是在我的博文Java代码优化（长期更新）里面，底下评论的时候有朋友提到了这本书，当时我说要去买，不过这两个月一直都没时间去逛书店，甚是遗憾，之后肯定会找时间去买这本书的。</p>
+
+<p>《Effective Java中文版》的作者是Joshua Bloch，这个人就很厉害了，他是谷歌的首席架构师，属于超级技术大牛级别了吧，呵呵。由于没有看过这本书，所以我不好发表评论，但是从这本书的知名度以及其作者的来头来看（多提一句，这本书也是Java之父James Gosling博士推崇的一本书），我相信这一定是一本值得一看的好书。</p>
+
+<p>好的代码是每个Java程序员都应该去追求的，不是说我今天写一段好代码相比写一段烂代码对性能会有多大的提升，更多的应该是提升了代码的可读性以及可以规避许多潜在的、未知的问题，避免代码上线之后出问题而花时间去维护—-无论从时间成本、人力成本还是风险成本来说，这都是非常高的。</p>
+
+<h2 id="6-深入分析java-web技术内幕">6、深入分析Java Web技术内幕</h2>
+
+<p>《深入分析Java Web技术内幕》，作者许令波，淘宝工程师。</p>
+
+<p>这本书我用一个字概括就是：全。真的非常全，HTTP、DNS、CDN、静态化、Jetty、Tomcat、Servlet、Spring、MyBatis等等，什么都有，涉及知识面非常广，但又不像专门精讲某个知识点的书籍一样讲得非常深入，感觉这本书就是尽量去用短的篇幅讲清楚一些Java Web使用到的技术的内幕，让读者对这些知识点的技术内幕有一个理性的认识。</p>
+
+<p>不过，尽管每个知识点的篇幅都不多，但是重点都基本讲到了，是一本让人真正有收获的书。如果想进一步了解这些技术的技术内幕，就要自己去买相关书籍或者自己上网查资料了，有种抛砖引玉，或者说师傅领进门、修行在个人的感觉。</p>
+
+<h2 id="7-大型网站技术架构-核心原理与案例分析">7、大型网站技术架构 核心原理与案例分析</h2>
+
+<p>一个字评价这本书，屌；两个字评价这本书，很屌；三个字评价这本书，非常屌。呵呵，好了，再说下去可能别人以为我是水军了。</p>
+
+<p>《大型网站技术架构 核心原理与案例分析》的作者是李智慧，原阿里巴巴技术专家。</p>
+
+<p>Java的大多数应用都是用在Web上的，现在只要稍微大型一点的Web应用，都一定是一个分布式系统，那么一个分布式系统用到了哪些技术？一个大型网站是如何从一个小型网站成长起来的？如何保证你的网站安全？分布式系统使用到了缓存，有哪些缓存？缓存的使用有哪些值得注意的事项？</p>
+
+<p>关于分布式的知识点，都在这本书里面有体现，只有你想不到，没有他写不到，而且写得非常易懂，基本属于看一两遍，再记一些笔记就知道是怎么一回事儿了。多看几遍，对分布式的理解一定会加深不少。而且里面不仅仅是分布式的知识，还非常接地气地写了如何做一个好的架构师，其实我认为这不仅仅是写给想做架构师的读者看的，就是给读者一些建议，如何更好地提出意见、如何更让别人关注你的声音、如何看到他人的优点，入木三分，让人获益匪浅。</p>
+
+<h2 id="8-大型网站系统与java中间件实践">8、大型网站系统与Java中间件实践</h2>
+
+<p>《大型网站系统与Java中间件实践》作者曾宪杰，是淘宝的技术总监，算起来应该在阿里有至少P8的级别了吧。</p>
+
+<p>这本书的部分内容和上面一本李智慧的《大型网站技术架构 核心原理与案例分析》有所重合，像分布式系统的演化、CDN、CAP理论和BASE理论等等，这也更说明这些都是分布式系统或者说是一个大型网站重点关注的内容，当作一次再学习也不错。</p>
+
+<p>本书要突出的重点是中间件三个字，中间件是分布式系统中一个非常重要的东西，其最重要的作用应该就是解耦，降低模块与模块之间的强依赖，不同的模块之间的依赖度降低，便可以各自独立地开发自己的功能，这也可以说是软件工程发展的目标和驱动力。</p>
+
+<p>因此，本书有一部分的内容就是基于中间件，详细讲解了中间件与JMS的各种知识，适合对分布式系统比较熟悉并且想要往中间件方面有一定研究的读者。</p>
+
+<h2 id="9-从paxos到zookeeper分布式一致性原理与实践">9、从Paxos到ZooKeeper分布式一致性原理与实践</h2>
+
+<p>《从Paxos到ZooKeeper 分布式一致性原理与实践》，作者倪超，阿里巴巴工程师。</p>
+
+<p>这本书是我最近在研读的一本书，和上面的《大型网站系统与Java中间件实践》一样，属于分布式组件的范畴，属于有些深入的内容，当然也是我自己的个人兴趣。当然，如果有志向做一个出色的大型网站架构师、公司的技术总监之类，这些知识当然是必须掌握的。</p>
+
+<p>本书从分布式系统基本理论开始讲起，讲到Paxos算法，最后慢慢引入到Zookeeper，循序渐进。当然，更多的我目前还不方便发表什么看法，因为这本书的第二张Paxos算法我都还没有弄懂（Paxos算法确实有些难以理解和不太易懂），接下来的章节还没有看下去。</p>
+
+<p>如果网友们所在的公司在使用Zookeeper，并且你又对Zookeeper感兴趣想要研究一下它的原理的，这本书将是不二之选。</p>
+
+<h2 id="10-mysql5-6从零开始学">10、MySQL5.6从零开始学</h2>
+
+<p>《MySQL5.6从零开始学》，作者刘增杰和李坤。</p>
+
+<p>作为一名Java程序员，我认为我们千万不要觉得数据库是DBA的事情，数据库对一个Java程序员来说也是必须掌握的一门知识，丰富的数据库性能优化经验是一个顶尖程序员必备技能。</p>
+
+<p>目前主流的数据库有Oracle和MySQL，当然推荐大家的是MySQL，主要原因我认为有两点：</p>
+
+<p>1、MySQL相比Oracle更轻量级、更小、安装和卸载更方便，SQL其实都是差不多的，如果想学数据库，学MySQL就可以了，在家里面可以自己方便地研究，如果你的公司使用Oracle，只要再用对比学习法，关注一下Oracle和MySQL的差别即可</p>
+
+<p>2、随着2009年阿里巴巴去IOE的运动的进行，目前国内的很多互联网公司都会选择MySQL作为它们使用的数据库，因为MySQL免费，所以既省钱又不需要出了问题就依赖甲骨文公司</p>
+
+<p>MySQL学习我推荐的是这本我自己学习看的《MySQL5.6从零开始学》，我是觉得挺好的这本书，书里面的知识点很细致、很全面，读者选择书籍的标准大多不就是这两点吗？</p>
+
+<h2 id="11-spring源码深度解析">11、Spring源码深度解析</h2>
+
+<p>《Spring源码深度解析》，作者郝佳。</p>
+
+<p>Spring这个框架做得太好了，功能太强大了，以至于很多开发者都只知Spring，不知什么是工厂、什么是单例、什么是代理（我面试别人的真实体会）。这种功能强大的框架内部一定是很复杂的实现，这就导致一旦你的程序使用Spring，出了问题，可能是Error、可能是Exception、可能是程序运行结果不是你的预期的，出现诸如此类问题的时候，将会让你感到困惑，除了上网查资料或者问别人似乎没有更好的解决办法。</p>
+
+<p>研读Spring的源代码不失为一种很好的学习方法，我个人认为这有很多好处：</p>
+
+<ul>
+<li>理解框架内部的实现之后，可以主动去解决问题，而不需要依赖别人</li>
+<li>Spring框架内部实现用到了很多设计模式，很好的代码设计思路，这将会对你写代码、对你理解设计模式有很大的提高</li>
+<li>研究Spring框架将会大大增强你读代码的能力，我相信只要你能研究清楚Spring内部是如何实现的，其他任何一个框架的源代码都难不倒你</li>
+</ul>
+
+<p>总而言之，我认为读代码的能力是一个普通的程序员和一个好的程序员之间最大的差别之一，前者只会把别人写好的东西拿来用，后者不仅能用好，还清楚知道别人写好的东西底层是如何实现的，在出现问题的时候可以轻松解决。</p>
+
+<p>Spring源代码，个人推荐《Spring源码深度解析》一书，真要研究透并且写清楚Spring源代码，恐怕三四本书都不够，作者在近400页的篇幅中尽量去讲解Spring源代码是如何实现的，殊为不易，尽管无法讲得完全，但是相信作者的讲解配合上读者自己的研究，一定可以对Spring的实现有更深度的理解。</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/java" role="button">Java </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E5%9B%9B%E5%A4%A9/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>spring学习第四天</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-07/char%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>char和varchar的区别</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#1-%e6%b7%b1%e5%85%a5%e7%90%86%e8%a7%a3java%e8%99%9a%e6%8b%9f%e6%9c%ba-jvm%e9%ab%98%e7%ba%a7%e7%89%b9%e6%80%a7%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5">
+												 1、深入理解Java虚拟机：JVM高级特性与最佳实践
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#2-hotspot%e5%ae%9e%e6%88%98">
+												 2、HotSpot实战
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#3-java%e5%b9%b6%e5%8f%91%e7%bc%96%e7%a8%8b%e5%ae%9e%e6%88%98">
+												 3、Java并发编程实战
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#4-java%e5%a4%9a%e7%ba%bf%e7%a8%8b%e7%bc%96%e7%a8%8b%e6%a0%b8%e5%bf%83%e6%8a%80%e6%9c%af">
+												 4、java多线程编程核心技术
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#5-effective-java%e4%b8%ad%e6%96%87%e7%89%88">
+												 5、Effective Java中文版
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#6-%e6%b7%b1%e5%85%a5%e5%88%86%e6%9e%90java-web%e6%8a%80%e6%9c%af%e5%86%85%e5%b9%95">
+												 6、深入分析Java Web技术内幕
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#7-%e5%a4%a7%e5%9e%8b%e7%bd%91%e7%ab%99%e6%8a%80%e6%9c%af%e6%9e%b6%e6%9e%84-%e6%a0%b8%e5%bf%83%e5%8e%9f%e7%90%86%e4%b8%8e%e6%a1%88%e4%be%8b%e5%88%86%e6%9e%90">
+												 7、大型网站技术架构 核心原理与案例分析
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#8-%e5%a4%a7%e5%9e%8b%e7%bd%91%e7%ab%99%e7%b3%bb%e7%bb%9f%e4%b8%8ejava%e4%b8%ad%e9%97%b4%e4%bb%b6%e5%ae%9e%e8%b7%b5">
+												 8、大型网站系统与Java中间件实践
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#9-%e4%bb%8epaxos%e5%88%b0zookeeper%e5%88%86%e5%b8%83%e5%bc%8f%e4%b8%80%e8%87%b4%e6%80%a7%e5%8e%9f%e7%90%86%e4%b8%8e%e5%ae%9e%e8%b7%b5">
+												 9、从Paxos到ZooKeeper分布式一致性原理与实践
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#10-mysql5-6%e4%bb%8e%e9%9b%b6%e5%bc%80%e5%a7%8b%e5%ad%a6">
+												 10、MySQL5.6从零开始学
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#11-spring%e6%ba%90%e7%a0%81%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90">
+												 11、Spring源码深度解析
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

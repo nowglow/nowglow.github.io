@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="spring学习第一天">
+  
+  <meta property="og:title" content="spring学习第一天" />
+<meta property="og:description" content="spring学习第一天" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/" />
+<meta property="article:published_time" content="2019-06-25T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-25T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       spring学习第一天 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%A4%A9/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/spring"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Spring </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/spring"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Spring</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">spring学习第一天</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jun 25, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>9 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<h1 id="spring框架的概述">Spring框架的概述</h1>
+
+<h2 id="什么是spring">什么是Spring</h2>
+
+<p>Spring是分层的JavaSE/EE full-stack(一站式) 轻量级开源框架</p>
+
+<p>SUN提供的EE的三层结构:web层、业务层、数据访问层（持久层，集成层）</p>
+
+<p>Struts2是web层基于MVC设计模式框架.
+Hibernate是持久的一个ORM的框架.
+Spring框架有对三层的一站式解决方案:</p>
+
+<p>web层:Spring MVC
+持久层:JDBC Template
+业务层:Spring的Bean管理
+Spring的出现是为了取代EJB的臃肿、低效、脱离现实</p>
+
+<p>Spring的核心
+IOC:（Inverse of Control 反转控制）</p>
+
+<p>控制反转:将对象的创建权,交由Spring完成.
+AOP : Aspect Oriented Programming 是 面向对象的功能延伸.不是替换面向对象,是用来解决OO中一些问题.</p>
+
+<h2 id="spring的版本">Spring的版本</h2>
+
+<p>Spring3.x和Spring4.x Spring4需要整合hibernate4.
+Spring优点
+方便解耦，简化开发
+Spring就是一个大工厂，可以将所有对象创建和依赖关系维护，交给Spring管理</p>
+
+<h2 id="aop编程的支持">AOP编程的支持</h2>
+
+<p>Spring提供面向切面编程，可以方便的实现对程序进行权限拦截、运行监控等功能
+声明式事务的支持
+只需要通过配置就可以完成对事务的管理，而无需手动编程
+方便程序的测试
+Spring对Junit4支持，可以通过注解方便的测试Spring程序
+方便集成各种优秀框架
+Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架（如：Struts、Hibernate、MyBatis、Quartz等）的直接支持
+降低JavaEE API的使用难度
+Spring 对JavaEE开发中非常难用的一些API（JDBC、JavaMail、远程调用等），都提供了封装，使这些API应用难度大大降低</p>
+
+<h2 id="spring体系结构">Spring体系结构</h2>
+
+<p>Spring 框架是一个分层架构,它包含一系列的功能要素并被分为大约20个模块。这些模块分为Core Container、Data Access/Integration、Web、AOP（Aspect Oriented Programming)、Instrumentation和测试部分,如下图所示：</p>
+
+<h1 id="spring的快速入门">Spring的快速入门</h1>
+
+<h2 id="1-下载spring的开发包">1. 下载Spring的开发包</h2>
+
+<p>官方下载Spring 3.x 最新开发版本</p>
+
+<p><a href="http://www.springsource.org/download/community">http://www.springsource.org/download/community</a>
+Spring开发包 : spring-framework-3.2.0.RELEASE-dist.zip</p>
+
+<p>docs : spring框架api和规范
+libs : spring开发的jar包
+schema : XML的约束文档.
+Spring开发中的依赖包 : spring-framework-3.0.2.RELEASE-dependencies.zip</p>
+
+<h2 id="2-创建web工程引入相应jar包">2. 创建web工程引入相应jar包</h2>
+
+<p>spring-beans-3.2.0.RELEASE.jar
+spring-context-3.2.0.RELEASE.jar
+spring-core-3.2.0.RELEASE.jar
+spring-expression-3.2.0.RELEASE.jar</p>
+
+<p>开发的日志记录的包:</p>
+
+<p>com.springsource.org.apache.commons.logging-1.1.1.jar : 用于整合其他的日志的包(类似Hibernate中slf4j)
+com.springsource.org.apache.log4j-1.2.15.jar</p>
+
+<h2 id="3-创建spring的配置文件">3. 创建Spring的配置文件</h2>
+
+<p>在src下创建一个applicationContext.xml
+引入XML的约束
+找到xsd-config.html.引入beans约束</p>
+
+<pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+    &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+           xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+           xsi:schemaLocation=&quot;
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;&gt;
+
+    &lt;!-- bean definitions here --&gt;
+
+    &lt;/beans&gt;
+</code></pre>
+
+<h2 id="4-在配置中配置类">4. 在配置中配置类</h2>
+
+<pre><code>&lt;!-- 通过一个&lt;bean&gt;标签设置类的信息,通过id属性为类起个标识. --&gt;
+&lt;bean id=&quot;userService&quot; class=&quot;cn.itcast.spring3.demo1.HelloServiceImpl&quot;&gt;&lt;/bean&gt;
+</code></pre>
+
+<h2 id="5-创建测试类">5. 创建测试类</h2>
+
+<p>ApplicationContext 应用上下文，加载Spring 框架配置文件</p>
+
+<p>加载classpath：</p>
+
+<p>new ClassPathXmlApplicationContext(“applicationContext.xml”);</p>
+
+<p>加载磁盘路径：</p>
+
+<p>new FileSystemXmlApplicationContext(“applicationContext.xml”);</p>
+
+<p>@Test</p>
+
+<p>// Spring开发</p>
+
+<pre><code>public void demo2() {
+
+    // 创建一个工厂类.
+
+    ApplicationContext applicationContext = new ClassPathXmlApplicationContext(  &quot;applicationContext.xml&quot;);
+
+    HelloService helloService = (HelloService) applicationContext.getBean(&quot;userService&quot;);
+
+    helloService.sayHello();
+
+}
+</code></pre>
+
+<p>类创建的传统方式
+HelloTest类中使用 HelloService类对象</p>
+
+<p>传统方式： HelloService helloService = new HelloService();</p>
+
+<p>IoC Inverse of Control 反转控制的概念，就是将原本在程序中手动创建HelloService对象的控制权，交由Spring框架管理，简单说，就是创建HelloService对象控制权被反转到了Spring框架</p>
+
+<p>IOC和DI区别
+IOC:控制反转:将对象的创建权,由Spring管理.
+DI:依赖注入:在Spring创建对象的过程中,把对象依赖的属性注入到类中.</p>
+
+<p>面向对象中对象之间的关系;</p>
+
+<p>依赖:</p>
+
+<pre><code>public class A{
+private B b;
+}
+
+* 继承:is a
+* 聚合:
+    * 聚集:
+    * 组合:
+</code></pre>
+
+<p>BeanFactory与ApplicationContext区别</p>
+
+<p>ApplicationContext类继承了BeanFactory</p>
+
+<p>BeanFactory在使用到这个类的getBean()方法的时候,才会加载这个类.</p>
+
+<p>ApplicationContext类加载配置文件的时候,创建所有的类</p>
+
+<p>ApplicationContext对BeanFactory提供了扩展:</p>
+
+<ul>
+<li>国际化处理</li>
+<li>事件传递</li>
+<li>Bean自动装配</li>
+<li>各种不同应用层的Context实现</li>
+
+<li><p>早期开发使用BeanFactory.</p>
+
+<pre><code>@Test
+
+public void demo4(){
+
+    // ClassPathResource  FileSystemResource
+
+    BeanFactory beanFactory = new XmlBeanFactory(new FileSystemResource(&quot;applicationContext.xml&quot;))&lt;/u&gt;;
+
+    HelloService helloService = (HelloService) beanFactory.getBean(&quot;userService&quot;);
+
+    helloService.sayHello();
+
+}
+</code></pre></li>
+</ul>
+
+<h2 id="myeclipse配置xml提示">MyEclipse配置XML提示</h2>
+
+<ul>
+<li>Myeclipse window-preferences搜索xml catalog</li>
+<li>选中User Specified Entries – Add 操作</li>
+<li>location 浏览选中 解压spring 包中 schema\beans\spring-beans-3.2.xsd</li>
+<li>修改Key type 为 Schema location</li>
+<li>key 修改为 <a href="http://www.springframework.org/schema/beans/spring-beans.xsd">http://www.springframework.org/schema/beans/spring-beans.xsd</a></li>
+</ul>
+
+<h2 id="spring框架bean实例化的方式">Spring框架Bean实例化的方式</h2>
+
+<ul>
+<li>三种方式实例化Bean
+
+<ul>
+<li>构造方法实例化(默认无参数)</li>
+<li>静态工厂实例化</li>
+<li>实例工厂实例化</li>
+</ul></li>
+</ul>
+
+<h2 id="无参数构造方法的实例化">无参数构造方法的实例化</h2>
+
+<pre><code>&lt;!-- 默认情况下使用的就是无参数的构造方法. --&gt;
+&lt;bean id=&quot;bean1&quot; class=&quot;cn.itcast.spring3.demo2.Bean1&quot;&gt;&lt;/bean&gt;
+</code></pre>
+
+<h2 id="静态工厂实例化-简单工厂模式">静态工厂实例化 – 简单工厂模式</h2>
+
+<pre><code>&lt;!-- 第二种使用静态工厂实例化 --&gt;
+
+&lt;bean id=&quot;bean2&quot; class=&quot;cn.itcast.spring3.demo2.Bean2Factory&quot; factory-method=&quot;getBean2&quot;&gt;&lt;/bean&gt;
+</code></pre>
+
+<h2 id="实例工厂实例化-工厂方法模式">实例工厂实例化 – 工厂方法模式</h2>
+
+<pre><code>&lt;!-- 第三种使用实例工厂实例化 --&gt;
+
+&lt;bean id=&quot;bean3&quot; factory-bean=&quot;bean3Factory&quot; factory-method=&quot;getBean3&quot;&gt;&lt;/bean&gt;
+
+&lt;bean id=&quot;bean3Factory&quot; class=&quot;cn.itcast.spring3.demo2.Bean3Factory&quot;/&gt;
+
+public class PersonServiceFactory {
+    public  PersonService  createPersonService(){
+        return new PersonServiceImpl();
+       }
+}
+/**
+ * Bean的实例化的测试
+ * 
+ * @author 姜涛
+ * 
+ */
+public class SpringTest2 {
+    @Test
+    // 无参数的构造方法的实例化
+    public void demo1() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                &quot;applicationContext.xml&quot;);
+        Bean1 bean1 = (Bean1) applicationContext.getBean(&quot;bean1&quot;);
+        System.out.println(bean1);
+    }
+
+    @Test
+    // 静态工厂实例化
+    public void demo2() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                &quot;applicationContext.xml&quot;);
+        Bean2 bean2 = (Bean2) applicationContext.getBean(&quot;bean2&quot;);
+        System.out.println(bean2);
+    }
+    @Test
+    // 实例工厂实例化
+    public void demo3() {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                &quot;applicationContext.xml&quot;);
+        Bean3 bean3 = (Bean3) applicationContext.getBean(&quot;bean3&quot;);
+        System.out.println(bean3);
+    }
+</code></pre>
+
+<h2 id="bean的其他配置">Bean的其他配置</h2>
+
+<h2 id="bean的命名-id属性和name属性">Bean的命名 id属性和name属性</h2>
+
+<ul>
+<li>一般情况下，装配一个Bean时，通过指定一个id属性作为Bean的名称</li>
+<li>id 属性在IoC容器中必须是唯一的</li>
+<li>id 的命名要满足XML对ID属性命名规范
+
+<ul>
+<li>id遵守XML约束的id的约束.id约束保证这个属性的值是唯一的,而且必须以字母开始，可以使用字母、数字、连字符、下划线、句话、冒号</li>
+</ul></li>
+<li>如果Bean的名称中含有特殊字符，就需要使用name属性</li>
+<li>例如：
+
+<ul>
+<li><bean name="#person" class="cn.itcast.bean.Person"/></li>
+</ul></li>
+<li>因为name属性可以相同，所以后出现Bean会覆盖之前出现的同名的Bean</li>
+</ul>
+
+<h2 id="类的作用范围">类的作用范围 ##</h2>
+
+<ul>
+<li>scope属性 :
+
+<ul>
+<li>singleton : 单例的(默认的值)</li>
+<li>prototype : 多例的</li>
+<li>request : web开发中创建了一个对象,将这个对象存入request范围,request.setAttribute();</li>
+<li>session : web开发中.创建了一个对象,将这个对象存入session范围,session.setAttribute();</li>
+<li>globalSession :一般用于Porlet应用环境.指的是分布式开发.不是porlet环境,globalSession等同于session;</li>
+</ul></li>
+<li>实际开发中主要使用 singleton,prototype</li>
+</ul>
+
+<h2 id="bean的生命周期">Bean的生命周期</h2>
+
+<ul>
+<li><p>配置Bean的初始化和销毁的方法:在xml文件中加入：</p>
+
+<ul>
+<li>init-method=”setup”</li>
+<li>destroy-method=”teardown”</li>
+</ul></li>
+
+<li><p>执行销毁的时候,必须手动关闭工厂,而且只对scope=singleton有效</p>
+
+<ul>
+<li>必须用子类执行 ClassPathXmlApplicationContext 中的close方法来实现。</li>
+</ul></li>
+</ul>
+
+<h2 id="bean的生命周期的11个步骤">Bean的生命周期的11个步骤</h2>
+
+<ul>
+<li>1 . bean对象实例化 : instantiate bean</li>
+<li>2 . 属性的注入： populate properties : 封装属性</li>
+<li>3 . 注入配置的类的名称 ： 如果Bean实现BeanNameAware 执行 setBeanName</li>
+<li>4 . 注入applicationContext ： 如果Bean实现BeanFactoryAware 或者 k 设置工厂 setBeanFactory 或者上下文对象 setApplicationContext</li>
+<li>5 . 初始化之前执行操作 ： 如果存在类实现 BeanPostProcessor（后处理Bean），执行postProcessBeforeInitialization
+需要添加此标签：<bean class="cn.itcast.spring3.demo4.MyBeanPostProcessor"></bean></li>
+<li>6 . 属性设置后执行操作 ： 如果Bean实现InitializingBean 执行 afterPropertiesSet</li>
+<li>7 . 调用手动设置的初始化方法 ： 调用<bean init-method="init"> 指定初始化方法 init</li>
+<li>8 . 初始化后执行操作 ： 如果存在类实现 BeanPostProcessor（处理Bean），执行 postProcessAfterInitialization</li>
+<li>9 . 执行业务处理</li>
+<li>10 . 调用销毁的方法 ： 如果Bean实现 DisposableBean 执行 destroy</li>
+<li>11 . 调用手动销毁方法 ： 调用<bean destroy-method="customerDestroy"> 指定销毁方法 customerDestroy</li>
+<li></li>
+<li>案例：在CustomerService类的add方法之前进行权限校验</li>
+<li></li>
+<li>xml配置</li>
+
+<li><p><bean id="customerService" class="cn.itcast.spring3.demo4.CustomerServiceImpl" init-method="setup" destroy-method="teardown">
+        <property name="name" value="itcast"></property>
+    </bean></p>
+
+<pre><code>&lt;bean class=&quot;cn.itcast.spring3.demo4.MyBeanPostProcessor&quot;&gt;&lt;/bean&gt;
+//这里不需要写id，因为这是由Spring容器自动调用的。
+</code></pre></li>
+</ul>
+
+<p>CustomerService &amp; CustomerServiceImpl</p>
+
+<pre><code>public interface CustomerService {
+    public void add();
+    public void find();
+}
+
+
+
+public class CustomerServiceImpl implements CustomerService, BeanNameAware,ApplicationContextAware,InitializingBean,DisposableBean   {
+    private String name;
+
+    public void setName(String name) {
+        System.out.println(&quot;第二步:属性的注入.&quot;);
+        this.name = name;
+    }
+
+    public CustomerServiceImpl() {
+        super();
+        System.out.println(&quot;第一步:实例化类.&quot;);
+    }
+
+    public void add(){
+        System.out.println(&quot;添加客户...&quot;);
+    }
+
+    public void find(){
+        System.out.println(&quot;查询客户...&quot;);
+    }
+
+    public void setBeanName(String name) {
+        System.out.println(&quot;第三步:注入配置的类的名称&quot;+name);
+    }
+
+    public void setApplicationContext(ApplicationContext applicationContext)
+            throws BeansException {
+        System.out.println(&quot;第四步:注入applicationContext&quot;+applicationContext);
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println(&quot;第六步:属性设置后执行...&quot;);
+    }
+
+    public void setup(){
+        System.out.println(&quot;第七步:调用手动设置的初始化方法...&quot;);
+    }
+
+    public void destroy() throws Exception {
+        System.out.println(&quot;第十步:调用销毁的方法...&quot;);
+    }
+
+    public void teardown(){
+        System.out.println(&quot;第十一步:调用手动销毁方法...&quot;);
+    }
+}
+</code></pre>
+
+<p>MyBeanPostProcessor</p>
+
+<pre><code>public class MyBeanPostProcessor implements BeanPostProcessor{
+    /**
+     * bean:实例对象
+     * beanName:在配置文件中配置的类的标识.
+     */
+    public Object postProcessBeforeInitialization(Object bean, String beanName)
+            throws BeansException {
+        System.out.println(&quot;第五步:初始化之前执行...&quot;);
+        return bean;
+    }
+
+    public Object postProcessAfterInitialization(final Object bean, String beanName)
+            throws BeansException {
+        System.out.println(&quot;第八步:初始化后执行...&quot;);
+        // 动态代理:
+        if(beanName.equals(&quot;customerService&quot;)){
+            Object proxy = Proxy.newProxyInstance(bean.getClass().getClassLoader(), bean.getClass().getInterfaces() , new InvocationHandler() {
+                // 调用目标方法的时候,调用invoke方法.
+                public Object invoke(Object proxy, Method method, Object[] args)
+                        throws Throwable {
+                    if(&quot;add&quot;.equals(method.getName())){
+                        System.out.println(&quot;权限校验...&quot;);
+                        Object result = method.invoke(bean, args);
+                        //System.out.println(System.currentTimeMillis());
+                        return result;
+                    }
+                    return method.invoke(bean, args);
+                }
+            });
+            return proxy;
+        }
+        return bean;
+    }
+
+}
+</code></pre>
+
+<p>Spring Test</p>
+
+<pre><code>public class SpringTest4 {
+
+    @Test
+    // Bean完整的生命周期
+    public void demo1() {
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+                &quot;applicationContext.xml&quot;);
+
+        CustomerService customerService = (CustomerService) applicationContext.getBean(&quot;customerService&quot;);
+        customerService.add();
+        customerService.find();
+
+        applicationContext.close();
+    }
+}
+
+
+//结果如下：
+第一步：实例化类
+第二步：属性的注入
+第三步：注入配置的类的名称 customerService
+第四步：注入applicationContext org.springframework.context.support.ClassPathXmlApplicationContext@61baa894: startup date [Wed Jun 22 11:49:14 CST 2016]; root of context hierarchy
+第五步：初始化之前执行...
+第六步：属性设置后执行...
+第七步：调用手动设置的初始化方法...
+第八步：初始化后执行...
+权限校验...
+添加客户...
+查询客户...
+11:49:14,863  INFO ClassPathXmlApplicationContext:1042 - Closing org.springframework.context.support.ClassPathXmlApplicationContext@61baa894: startup date [Wed Jun 22 11:49:14 CST 2016]; root of context hierarchy
+11:49:14,864  INFO DefaultListableBeanFactory:444 - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@64bfbc86: defining beans [customerService,test.spring3.demo4.MyBeanPostProcessor#0]; root of factory hierarchy
+第十步：调用销毁的方法...
+第十一步：调用手动销毁的方法...
+</code></pre>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/spring" role="button">Spring </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>计算机网络应用层面试题</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-06/spring%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%BA%8C%E5%A4%A9/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>spring学习第二天</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e6%a1%86%e6%9e%b6%e7%9a%84%e6%a6%82%e8%bf%b0">
+												 Spring框架的概述
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e4%bb%80%e4%b9%88%e6%98%afspring">
+												 什么是Spring
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e7%9a%84%e7%89%88%e6%9c%ac">
+												 Spring的版本
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#aop%e7%bc%96%e7%a8%8b%e7%9a%84%e6%94%af%e6%8c%81">
+												 AOP编程的支持
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e4%bd%93%e7%b3%bb%e7%bb%93%e6%9e%84">
+												 Spring体系结构
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e7%9a%84%e5%bf%ab%e9%80%9f%e5%85%a5%e9%97%a8">
+												 Spring的快速入门
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#1-%e4%b8%8b%e8%bd%bdspring%e7%9a%84%e5%bc%80%e5%8f%91%e5%8c%85">
+												 1. 下载Spring的开发包
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#2-%e5%88%9b%e5%bb%baweb%e5%b7%a5%e7%a8%8b%e5%bc%95%e5%85%a5%e7%9b%b8%e5%ba%94jar%e5%8c%85">
+												 2. 创建web工程引入相应jar包
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#3-%e5%88%9b%e5%bb%baspring%e7%9a%84%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">
+												 3. 创建Spring的配置文件
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#4-%e5%9c%a8%e9%85%8d%e7%bd%ae%e4%b8%ad%e9%85%8d%e7%bd%ae%e7%b1%bb">
+												 4. 在配置中配置类
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#5-%e5%88%9b%e5%bb%ba%e6%b5%8b%e8%af%95%e7%b1%bb">
+												 5. 创建测试类
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#myeclipse%e9%85%8d%e7%bd%aexml%e6%8f%90%e7%a4%ba">
+												 MyEclipse配置XML提示
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#spring%e6%a1%86%e6%9e%b6bean%e5%ae%9e%e4%be%8b%e5%8c%96%e7%9a%84%e6%96%b9%e5%bc%8f">
+												 Spring框架Bean实例化的方式
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e6%97%a0%e5%8f%82%e6%95%b0%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95%e7%9a%84%e5%ae%9e%e4%be%8b%e5%8c%96">
+												 无参数构造方法的实例化
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e9%9d%99%e6%80%81%e5%b7%a5%e5%8e%82%e5%ae%9e%e4%be%8b%e5%8c%96-%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f">
+												 静态工厂实例化 – 简单工厂模式
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%ae%9e%e4%be%8b%e5%b7%a5%e5%8e%82%e5%ae%9e%e4%be%8b%e5%8c%96-%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f">
+												 实例工厂实例化 – 工厂方法模式
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e7%9a%84%e5%85%b6%e4%bb%96%e9%85%8d%e7%bd%ae">
+												 Bean的其他配置
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e7%9a%84%e5%91%bd%e5%90%8d-id%e5%b1%9e%e6%80%a7%e5%92%8cname%e5%b1%9e%e6%80%a7">
+												 Bean的命名 id属性和name属性
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e7%b1%bb%e7%9a%84%e4%bd%9c%e7%94%a8%e8%8c%83%e5%9b%b4">
+												 类的作用范围 ##
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f">
+												 Bean的生命周期
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#bean%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f%e7%9a%8411%e4%b8%aa%e6%ad%a5%e9%aa%a4">
+												 Bean的生命周期的11个步骤
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="用递归和循环分别实现二叉树的各种遍历方式">
+  
+  <meta property="og:title" content="Java中实现二叉树的先序、中序、后序、层序遍历" />
+<meta property="og:description" content="用递归和循环分别实现二叉树的各种遍历方式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-06/java%E4%B8%AD%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%85%88%E5%BA%8F%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/" />
+<meta property="article:published_time" content="2019-06-20T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-20T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       Java中实现二叉树的先序、中序、后序、层序遍历 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-06/java%E4%B8%AD%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%85%88%E5%BA%8F%E4%B8%AD%E5%BA%8F%E5%90%8E%E5%BA%8F%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 数据结构 </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>数据结构</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">Java中实现二叉树的先序、中序、后序、层序遍历</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jun 20, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>2 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <pre><code>import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Stack;
+
+/**
+ * 
+ * @author kerryfish
+ * JAVA实现二叉树的先序、中序、后序、层序遍历
+ * 递归和非递归版本
+ *
+ */
+
+class Node{
+    public int value;
+    public Node left;
+    public Node right;
+    public Node(int v){
+        this.value=v;
+        this.left=null;
+        this.right=null;
+    }
+
+}
+class BinaryTreeTraversal {
+    /**
+     * @param root 树根节点
+     * 递归先序遍历
+     */
+    public static void preOrderRec(Node root){
+        if(root!=null){
+            System.out.println(root.value);
+            preOrderRec(root.left);
+            preOrderRec(root.right);
+        }
+    }
+    /**
+     * @param root 树根节点
+     * 递归中序遍历
+     */
+    public static void inOrderRec(Node root){
+        if(root!=null){
+            preOrderRec(root.left);
+            System.out.println(root.value);
+            preOrderRec(root.right);
+        }
+    }
+    /**
+     * @param root 树根节点
+     * 递归后序遍历
+     */
+    public static void postOrderRec(Node root){
+        if(root!=null){
+            preOrderRec(root.left);
+            preOrderRec(root.right);
+            System.out.println(root.value);
+        }
+    }
+    /**
+     * 
+     * @param root 树根节点
+     * 利用栈实现循环先序遍历二叉树
+     * 这种实现类似于图的深度优先遍历（DFS）
+     * 维护一个栈，将根节点入栈，然后只要栈不为空，出栈并访问，接着依次将访问节点的右节点、左节点入栈。
+     * 这种方式应该是对先序遍历的一种特殊实现（看上去简单明了），但是不具备很好的扩展性，在中序和后序方式中不适用
+     */
+    public static void preOrderStack_1(Node root){
+        if(root==null)return;
+        Stack&lt;Node&gt; s=new Stack&lt;Node&gt;();
+        s.push(root);
+        while(!s.isEmpty()){
+            Node temp=s.pop();
+            System.out.println(temp.value);
+            if(temp.right!=null) s.push(temp.right);
+            if(temp.left!=null) s.push(temp.left);
+        }
+    }
+    /**
+     * 
+     * @param root 树的根节点
+     * 利用栈模拟递归过程实现循环先序遍历二叉树
+     * 这种方式具备扩展性，它模拟递归的过程，将左子树点不断的压入栈，直到null，然后处理栈顶节点的右子树
+     */
+    public static void preOrderStack_2(Node root){
+        if(root==null)return;
+        Stack&lt;Node&gt; s=new Stack&lt;Node&gt;();
+        while(root!=null||!s.isEmpty()){
+            while(root!=null){
+                System.out.println(root.value);
+                s.push(root);//先访问再入栈
+                root=root.left;
+            }
+            root=s.pop();
+            root=root.right;//如果是null，出栈并处理右子树
+        }
+    }
+    /**
+     * 
+     * @param root 树根节点
+     * 利用栈模拟递归过程实现循环中序遍历二叉树
+     * 思想和上面的preOrderStack_2相同，只是访问的时间是在左子树都处理完直到null的时候出栈并访问。
+     */
+    public static void inOrderStack(Node root){
+        if(root==null)return;
+        Stack&lt;Node&gt; s=new Stack&lt;Node&gt;();
+        while(root!=null||!s.isEmpty()){
+            while(root!=null){
+                s.push(root);//先访问再入栈
+                root=root.left;
+            }
+            root=s.pop();
+            System.out.println(root.value);
+            root=root.right;//如果是null，出栈并处理右子树
+        }
+    }
+    /**
+     * 
+     * @param root 树根节点
+     * 后序遍历不同于先序和中序，它是要先处理完左右子树，然后再处理根(回溯)，所以需要一个记录哪些节点已经被访问的结构(可以在树结构里面加一个标记)，这里可以用map实现
+     */
+    public static void postOrderStack(Node root){
+        if(root==null)return;
+        Stack&lt;Node&gt; s=new Stack&lt;Node&gt;();
+        Map&lt;Node,Boolean&gt; map=new HashMap&lt;Node,Boolean&gt;(); 
+        s.push(root);
+        while(!s.isEmpty()){
+            Node temp=s.peek();
+            if(temp.left!=null&amp;&amp;!map.containsKey(temp.left)){
+                temp=temp.left;
+                while(temp!=null){
+                    if(map.containsKey(temp))break;
+                    else s.push(temp);
+                    temp=temp.left;
+                }
+                continue;
+            }
+            if(temp.right!=null&amp;&amp;!map.containsKey(temp.right)){
+                s.push(temp.right);
+                continue;
+            }
+            Node t=s.pop();
+            map.put(t,true);
+            System.out.println(t.value);
+        }
+    }
+    /**
+     * 
+     * @param root 树根节点
+     * 层序遍历二叉树，用队列实现，先将根节点入队列，只要队列不为空，然后出队列，并访问，接着讲访问节点的左右子树依次入队列
+     */
+    public static void levelTravel(Node root){
+        if(root==null)return;
+        Queue&lt;Node&gt; q=new LinkedList&lt;Node&gt;();
+        q.add(root);
+        while(!q.isEmpty()){
+            Node temp =  q.poll();
+            System.out.println(temp.value);
+            if(temp.left!=null)q.add(temp.left);
+            if(temp.right!=null)q.add(temp.right);
+        }
+    }
+}
+</code></pre>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" role="button">数据结构 </a></li>
+      
+    
+      <li><a href="https://nowglow.github.io/tags/java" role="button">Java </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-06/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%B8%AE%E4%BD%A0%E8%A7%A3%E5%86%B3%E4%B8%A4%E4%B8%AA%E6%A3%98%E6%89%8B%E7%9A%84%E9%97%AE%E9%A2%98/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>一篇文章帮你解决两个棘手的问题</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E5%B1%82%E9%9D%A2%E8%AF%95%E9%A2%98/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>计算机网络应用层面试题</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

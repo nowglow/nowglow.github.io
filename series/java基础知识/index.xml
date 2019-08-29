@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java基础知识 on Nightglow&#39;s Blog</title>
+    <link>https://nowglow.github.io/series/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+    <description>Recent content in Java基础知识 on Nightglow&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Sat, 15 Jun 2019 00:14:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://nowglow.github.io/series/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java集合面试题</title>
+      <link>https://nowglow.github.io/blog/2019-06/java%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Sat, 15 Jun 2019 00:14:19 +0800</pubDate>
+      
+      <guid>https://nowglow.github.io/blog/2019-06/java%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>java集合面试题总结！</description>
+    </item>
+    
+    <item>
+      <title>Java中的内部类（成员内部类、静态内部类、局部内部类、匿名内部类）</title>
+      <link>https://nowglow.github.io/blog/2019-06/java%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E7%B1%BB%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/</link>
+      <pubDate>Fri, 14 Jun 2019 00:14:19 +0800</pubDate>
+      
+      <guid>https://nowglow.github.io/blog/2019-06/java%E4%B8%AD%E7%9A%84%E5%86%85%E9%83%A8%E7%B1%BB%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB%E5%B1%80%E9%83%A8%E5%86%85%E9%83%A8%E7%B1%BB%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB/</guid>
+      <description>在我们写代码的时候用的最多的或许是匿名内部类，但是Java中的其他内部类同样有它存在的必要。</description>
+    </item>
+    
+  </channel>
+</rss>

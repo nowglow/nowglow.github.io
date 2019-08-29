@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>集合 on Nightglow&#39;s Blog</title>
+    <link>https://nowglow.github.io/tags/%E9%9B%86%E5%90%88/</link>
+    <description>Recent content in 集合 on Nightglow&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Sat, 15 Jun 2019 00:14:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://nowglow.github.io/tags/%E9%9B%86%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java集合面试题</title>
+      <link>https://nowglow.github.io/blog/2019-06/java%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Sat, 15 Jun 2019 00:14:19 +0800</pubDate>
+      
+      <guid>https://nowglow.github.io/blog/2019-06/java%E9%9B%86%E5%90%88%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>java集合面试题总结！</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java基础 on Nightglow&#39;s Blog</title>
+    <link>https://nowglow.github.io/series/java%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in Java基础 on Nightglow&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <lastBuildDate>Thu, 04 Jul 2019 00:14:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://nowglow.github.io/series/java%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>clone常见的三种方式</title>
+      <link>https://nowglow.github.io/blog/2019-07/clone%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <pubDate>Thu, 04 Jul 2019 00:14:19 +0800</pubDate>
+      
+      <guid>https://nowglow.github.io/blog/2019-07/clone%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <description>clone常见的三种方式</description>
+    </item>
+    
+    <item>
+      <title>char和varchar的区别</title>
+      <link>https://nowglow.github.io/blog/2019-07/char%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Wed, 03 Jul 2019 00:14:19 +0800</pubDate>
+      
+      <guid>https://nowglow.github.io/blog/2019-07/char%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>char和varchar的区别仅仅在于长度是否可变吗？</description>
+    </item>
+    
+  </channel>
+</rss>

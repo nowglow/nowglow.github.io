@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="RaoPengYuan">
+  <meta name="description" content="clone常见的三种方式">
+  
+  <meta property="og:title" content="clone常见的三种方式" />
+<meta property="og:description" content="clone常见的三种方式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://nowglow.github.io/blog/2019-07/clone%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" />
+<meta property="article:published_time" content="2019-07-04T00:14:19&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-04T00:14:19&#43;08:00"/>
+
+
+
+  <title>
+  
+       clone常见的三种方式 | Nightglow&#39;s Blog 
+  
+  </title>
+
+  <link rel="canonical" href="https://nowglow.github.io/blog/2019-07/clone%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/">
+
+  
+  
+
+  
+  <link href="https://nowglow.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://nowglow.github.io/css/font.css" rel="stylesheet"> 
+    
+  
+  <link href="https://nowglow.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://nowglow.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/vendors/mdb/style.min.css" rel="stylesheet"> 
+  <link href="https://nowglow.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://nowglow.github.io/img/profile2.jpg"
+  
+  >
+
+
+  
+  
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+    
+    <link rel="stylesheet" href="https://nowglow.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://nowglow.github.io/">
+          
+        <img class="avatar" src="https://nowglow.github.io/" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> RaoPengYuan</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://nowglow.github.io/">Home</a>
+          </li>
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/blog/" >Blog  </a>
+            </li>
+          
+             
+            <li class="nav-item ">
+              <a class="nav-link" href="https://nowglow.github.io/about/" >About  </a>
+            </li>
+          
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://nowglow.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://nowglow.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://nowglow.github.io/img/profile2.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://nowglow.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Nightglow&#39;s Blog</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/nowglow" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="col-md-10">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://nowglow.github.io/categories/java%E5%9F%BA%E7%A1%80"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> Java基础 </a></li>
+      
+    
+    
+      
+        <li><a href="https://nowglow.github.io/series/java%E5%9F%BA%E7%A1%80"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>Java基础</a></li>
+      
+    
+  </ul>
+
+  <div class="px-4 post-heading">clone常见的三种方式</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jul 4, 2019</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>5 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            
+
+<p>在JAVA中克隆一个对象常见的有三种形式
+1.通过自己写一个克隆方法里面 new 一个同样的对象来进行 get、set 依次赋值实现深度克隆（很繁琐且易出错）；
+2.通过实现 Cloneable 接口并重写 Object 类的 clone() 方法（分为深浅两种方式）；
+3.通过实现 Serializable 接口并用对象的序列化和反序列化来实现真正的深度克隆；</p>
+
+<h2 id="第一种方法cloneable-接口实现浅克隆">第一种方法Cloneable 接口实现浅克隆</h2>
+
+<pre><code>public class People implements Cloneable {
+
+    private String name = &quot;ilt&quot;;
+    private Hand hand = new Hand();
+
+    public Hand getHand() {
+        return hand;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
+    }
+    public static void main(String[] args) throws CloneNotSupportedException {
+        People p1 = new People();
+        People p2 = (People) p1.clone();
+        System.out.println(&quot;第一个对象的hash值:&quot;+p1.hashCode());
+        System.out.println(&quot;第二个对象的hash值:&quot;+p2.hashCode());
+        System.out.println(&quot;分割线-----------&quot;);
+        System.out.println(&quot;p1中的hand对象的hash值:&quot;+p1.getHand().hashCode());
+        System.out.println(&quot;p2中的hand对象的hash值:&quot;+p2.getHand().hashCode());
+    }
+}
+
+class Hand implements Cloneable {
+
+}
+</code></pre>
+
+<p>上面代码输出的结果如下，根据hash值相等能确定两个对象是否相等的原则，发现p1和p2不等，但p1中的hand对象与p2中的hand对象是相等的。Cloneable 接口实现克隆是先在内存中开辟一块和原始对象一样的空间，然后原样拷贝原始对象中的内容，对基本数据类型就是值复制，而对非基本类型变量保存的仅仅是对象的引用，所以会导致 clone 后的非基本类型变量和原始对象中相应的变量指向的是同一个对象。</p>
+
+<pre><code>第一个对象的hash值:1408448235
+第二个对象的hash值:77244764
+分割线-----------
+p1中的hand对象的hash值:1172625760
+p2中的hand对象的hash值:1172625760
+</code></pre>
+
+<h2 id="第二种-cloneable-接口实现深克隆">第二种：Cloneable 接口实现深克隆</h2>
+
+<p>在浅度克隆的基础上对于要克隆对象中的非基本数据类型的属性对应的类也实现克隆，这样对于非基本数据类型的属性复制的不是一份引用。</p>
+
+<pre><code>public class People implements Cloneable {
+
+    private String name = &quot;ilt&quot;;
+    private Hand hand = new Hand();
+
+    public Hand getHand() {
+        return hand;
+    }
+
+    public void setHand(Hand hand) {
+        this.hand = hand;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        People p2 = (People) super.clone();
+        p2.setHand((Hand) hand.clone());
+        return p2;
+    }
+    public static void main(String[] args) throws CloneNotSupportedException {
+        People p1 = new People();
+        People p2 = (People) p1.clone();
+        System.out.println(&quot;第一个对象的hash值:&quot; + p1.hashCode());
+        System.out.println(&quot;第二个对象的hash值:&quot; + p2.hashCode());
+        System.out.println(&quot;分割线-----------&quot;);
+        System.out.println(&quot;p1中的hand对象的hash值:&quot; + p1.getHand().hashCode());
+        System.out.println(&quot;p2中的hand对象的hash值:&quot; + p2.getHand().hashCode());
+    }
+}
+
+class Hand implements Cloneable {
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        return super.clone();
+    }
+}
+</code></pre>
+
+<p>结果如下，证明已经进行深克隆
+    第一个对象的hash值:1172625760
+    第二个对象的hash值:863719801
+    分割线&mdash;&mdash;&mdash;&ndash;
+    p1中的hand对象的hash值:1696725334
+    p2中的hand对象的hash值:427340025</p>
+
+<h2 id="序列化与反序列化实现深克隆">序列化与反序列化实现深克隆</h2>
+
+<p>对象序列化操作可以将对象的状态转换成字节流传输或者存储再生，我们可以借用这一特点实现对象的深度克隆，特别是当我们的对象嵌套非常复杂且想实现深度克隆时如果使用序列化方式会大大减少代码量。</p>
+
+<pre><code>public class TestClone implements Serializable{
+
+
+    private static final long serialVersionUID = 1L;
+
+    public String name = &quot;ilt&quot;;
+
+
+    public static void main(String[] args) throws Exception {
+        TestClone t1 = new TestClone();
+        byte[] b = ObjectUtil.objectToBytes(t1);//序列化
+        TestClone t2 = (TestClone) ObjectUtil.bytesToObject(b);//反序列化
+        System.out.println(&quot;t1对象的name：&quot;+t1.name);
+        System.out.println(&quot;t2对象的name：&quot;+t2.name);
+        System.out.println(&quot;分割线-------------&quot;);
+        System.out.println(&quot;t1对象的hash值为：&quot;+t1.hashCode());
+        System.out.println(&quot;t2对象的hash值为：&quot;+t2.hashCode());
+        System.out.println(&quot;分割线-------------&quot;);
+        System.out.println(&quot;t1中的obj对象的hash值为：&quot;+t1.obj.hashCode());
+        System.out.println(&quot;t2中的obj对象的hash值为：&quot;+t2.obj.hashCode());
+
+    }
+
+    class Bean implements Serializable{
+
+        private static final long serialVersionUID = 1L;
+
+    }
+}
+</code></pre>
+
+<p>结果如下，证明对象的属性被深克隆下来了
+    t1对象的name：ilt
+    t2对象的name：ilt
+    分割线&mdash;&mdash;&mdash;&mdash;-
+    t1对象的hash值为：1847546936
+    t2对象的hash值为：812610706
+    分割线&mdash;&mdash;&mdash;&mdash;-
+    t1中的obj对象的hash值为：1164730192
+    t2中的obj对象的hash值为：1699624469</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://nowglow.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://nowglow.github.io/tags/java%E5%9F%BA%E7%A1%80" role="button">Java基础 </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://nowglow.github.io/blog/2019-07/char%E5%92%8Cvarchar%E7%9A%84%E5%8C%BA%E5%88%AB/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>char和varchar的区别</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://nowglow.github.io/blog/2019-07/%E7%88%AC%E6%A5%BC%E6%A2%AF%E7%9A%84%E6%B8%B8%E6%88%8F/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>爬楼梯的游戏</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+	
+	
+	
+	
+		
+		
+		
+	
+
+		
+		<div class="col-md-2 pl-0">
+
+			
+			<div id="page-scrollspy" class="toc-nav">
+				
+				<ul class="nav nav-pills ml-0">
+					
+					<li class="nav-item pb-3 text-center">
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
+					</li>
+
+					
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e7%ac%ac%e4%b8%80%e7%a7%8d%e6%96%b9%e6%b3%95cloneable-%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e6%b5%85%e5%85%8b%e9%9a%86">
+												 第一种方法Cloneable 接口实现浅克隆
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e7%ac%ac%e4%ba%8c%e7%a7%8d-cloneable-%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e6%b7%b1%e5%85%8b%e9%9a%86">
+												 第二种：Cloneable 接口实现深克隆
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+						
+						
+							
+								
+								
+									<ul class="nav">
+								
+								
+
+										<li class="nav-item">
+						 					<a class="nav-link" href="#%e5%ba%8f%e5%88%97%e5%8c%96%e4%b8%8e%e5%8f%8d%e5%ba%8f%e5%88%97%e5%8c%96%e5%ae%9e%e7%8e%b0%e6%b7%b1%e5%85%8b%e9%9a%86">
+												 序列化与反序列化实现深克隆
+											</a>
+										</li>
+						 
+								
+								
+									</ul>
+								
+							
+						
+				 
+
+				</ul>
+			</div>
+			
+
+		</div>
+		
+	
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/nowglow " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:raopengyuan@aliyun.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2019 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://nowglow.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://nowglow.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://nowglow.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://nowglow.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
